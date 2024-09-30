@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DXSR Plugin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .jumbotron {
+            background-color: #e9ecef;
+            padding: 2rem;
+            border-radius: 0.3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: 0.5rem 1rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: 0.3rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .btn-success {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .btn-blue {
+            background-color: #007bff;
+            color: white;
+            border-radius: 12px;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .btn-blue:hover {
+            background-color: #0056b3;
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 0.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .alert-success {
+            background-color: #f9f9f9;
+        }
+
+        p {
+            margin: 0.5rem 0;
+        }
+
+        .version-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        .key-box {
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.3rem;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+
+        .status-item {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>DXSR Plugin - All in One Cheat App</h1>
+            <p class="version-info"><strong>Version:</strong> 4.6</p>
+            <a class="btn btn-success" role="button" href="https://github.com/YourJesselyn/DXSR-Plugin/raw/main/README.md">Download DXSR Plugin</a>
+            
+            <div id="license" class="alert alert-success status">
+                <h2>Free Key / License</h2>
+                <p class="key-box" id="license-key">12345678910</p>
+                <button class="btn-blue" onclick="copyKey()">Copy</button>
+            </div>
+
+            <div id="cheatstatus" class="alert alert-success status">
+                <h2>Current Latest Versions</h2>
+                <p class="status-item">DXSR Plugin: <strong>v4.6</strong></p>
+                <p class="status-item">Additional Module: <strong>v2.3</strong></p>
+            </div>
+
+            <div id="serverstatus" class="alert alert-success status">
+                <h2>Server Status</h2>
+                <p class="status-item">Current Status: <strong><span style="color: green;">Live</span></strong></p>
+                <p class="status-item">Current Time: <strong><span id="current-time"></span></strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk menyalin kode key ke clipboard
+        function copyKey() {
+            var keyText = document.getElementById("license-key").innerText;
+            navigator.clipboard.writeText(keyText).then(function() {
+                alert("Key copied to clipboard: " + keyText);
+            }, function(err) {
+                console.error("Failed to copy: ", err);
+            });
+        }
+
+        // Script untuk menampilkan waktu saat ini
+        function updateTime() {
+            var now = new Date();
+            var timeString = now.toLocaleTimeString();
+            document.getElementById('current-time').innerText = timeString;
+        }
+
+        setInterval(updateTime, 1000);
+    </script>
+
+</body>
+</html>
